@@ -1,0 +1,45 @@
+vdr-skin-anthra-sd (0.3.2-0fnu0~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Frank Neumann <fnu@yavdr.org>  Fri, 15 Nov 2019 13:49:59 +0100
+
+vdr-skin-anthra-sd (0.3.2-0fnu0~bionic) bionic; urgency=high
+
+  * bionic rebuild for ppa:fnu/main-fnu
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 10 Dec 2017 20:17:36 +0100
+
+vdr-skin-anthra-sd (0.3.2-0fnu0~zesty) zesty; urgency=medium
+
+  * zesty rebuild for ppa:fnu/main-fnu
+
+ -- Frank Neumann <fnu@yavdr.org>  Mon, 06 Feb 2017 13:24:41 +0100
+
+vdr-skin-anthra-sd (0.3.2-0fnu0~xenial) xenial; urgency=high
+
+  * rebuild for xenial 
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 01 Jan 2017 21:07:42 +0100
+
+vdr-skin-anthra-sd (0.3.2-0fnu0~trusty) trusty; urgency=high
+
+  * new version
+    thanks to tomas from vdr-portal.de
+  * changes to debian packaging 
+
+ -- Frank Neumann <fnu@yavdr.org>  Wed, 09 Apr 2014 19:56:42 +0200
+
+vdr-skin-anthra-sd (0.3.0-0fnu0~trusty) trusty; urgency=high
+
+  * New version for VDR 1.7.28+
+    thanks to tomas from vdr-portal.de
+  * Needs specific patched vdr-plugin-text2skin 
+
+ -- Frank Neumann <fnu@yavdr.org>  Wed, 17 Apr 2013 19:03:17 +0200
+
+vdr-skin-anthra-sd (0.2.9a-0yavdr0~precise) precise; urgency=medium
+
+  * Initial release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 18 Nov 2011 15:07:12 +0200

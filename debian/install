@@ -1,0 +1,8 @@
+themes/*		var/lib/vdr/themes/
+anthra_SD.colors	usr/share/vdr-skins/anthra_SD/
+anthra_SD.skin		usr/share/vdr-skins/anthra_SD/
+Make.config		usr/share/vdr-skins/anthra_SD/
+Makefile		usr/share/vdr-skins/anthra_SD/
+images			usr/share/vdr-skins/anthra_SD/
+xml			usr/share/vdr-skins/anthra_SD/
+
