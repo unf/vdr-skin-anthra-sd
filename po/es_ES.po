@@ -1,0 +1,23 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: anthra_SD\n"
+"Report-Msgid-Bugs-To: <>\n"
+"POT-Creation-Date: 2014-03-31 10:29+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Tomas Saxer <tsaxer@gmx.de>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: esSpanish\n"
+"X-Poedit-Country: Spain\n"
+
+msgid "Recordings"
+msgstr ""
+
+msgid "Volume"
+msgstr "Volumen"
+
+msgid "Mute"
+msgstr "Silenciar"

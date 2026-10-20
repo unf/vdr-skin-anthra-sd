@@ -1,0 +1,58 @@
+text2skin-anthra-SD Revision History
+------------------------------------------------------
+
+2014-03-24: Version 0.3.2
+- Some small fixes 
+- Adjustments for compatibility with VDR-2.x.x
+
+
+2013-10-27: Version 0.3.1
+-  Added support for channellogos with ChannelIds
+
+
+2013-04-14: Version 0.3.0
+- Added DiskUsage and VDR-Version to mainmenu
+
+
+2011-11-03: Version 0.2.9
+- Added optional bars for Signal Strength and Signal-to-Noise Ratio
+- Extended marquee-configuration for menus
+- Fixed update of Signal Strength and Signal-to-Noise Ratio
+  while zapping
+
+
+2011-10-22: Version 0.2.8
+- Switched screenBase from absolute to relative,
+  anthra-SD is vertically scalable now
+- Applied tiny patch for Makefile (patch by Ville Skyttä)
+- Some graphical reworking
+- Switched aspect ratio of channellogos from 4:3 to 16:9
+  hence http://justlinux.de/vdr/liquid-logos4anthra_HD-0.1.tar.gz
+  should be used now!
+
+
+2011-01-07: Version 0.2.7
+- Fixed size of replayInfo-window
+
+
+2010-12-11: Version 0.2.6
+- Makefile fixed
+
+
+2010-10-29: Version 0.2.5
+- Removed needless spaces after "align" (patch by Ville Skyttä)
+- Added EPGIMAGES (patch by Midas@vdrportal.de)
+- Splitted anthra_SD.template into separate files
+- Changed path for channellogos from relative to absolute
+- Outsourced user-defined Makefile-variables into Make.config
+
+
+2010-10-23: Version 0.2.4
+- Added NOMARQUEE-option in Makefile
+- Added HISTORY
+
+
+2010-10-21: Version 0.2.3
+- Added *.po-files
+- Added license
+- Added README

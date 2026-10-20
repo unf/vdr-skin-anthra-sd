@@ -1,0 +1,160 @@
+
+<display id="menu" >
+	<window x1="25" x2="695" y1="25" y2="-24" bpp="8"/>
+		
+		<image   x="25"  y="25" colors="64" path="images/top.png"/>
+		<ellipse x1="24" x2="37" y1="24" y2="44"   arc="-2" color="#0000000"/>
+		<ellipse x1="684" x2="696" y1="24" y2="44"   arc="-1" color="#0000000"/>
+		<rectangle x1="25" x2="694" y1="65" y2="-65"  color="Background" />	
+
+	<list  x1="25" x2="635" y1="65" y2="-81" condition="equal({MenuTitle:clean},'VDR')" >
+		<item height="23"/>
+		<image x="25"  y="11"   condition="{IsMenuCurrent}" colors="64" path="images/menuCurrent.png"/>
+		<ellipse x1="24" x2="34" y1="6" y2="21"  condition="{IsMenuCurrent}" arc="-2" color="Background"/>
+		<ellipse x1="24" x2="34" y1="25" y2="40"  condition="{IsMenuCurrent}" arc="-3" color="Background"/>
+		<ellipse x1="315" x2="325" y1="6" y2="21"  condition="{IsMenuCurrent}" arc="-1" color="Background"/>
+		<ellipse x1="315" x2="325" y1="25" y2="40"  condition="{IsMenuCurrent}" arc="-4" color="Background"/>
+<!--NOMARQUEE-->	<text x1="35" x2="290" y1="12" y2="41" color="TextHigh" font="Osd">{MenuGroup}</text>
+<!--NOMARQUEE-->	<text x1="35" x2="290" y1="12" y2="32" color="TextButton" font="Osd">{MenuItem}</text>
+<!--FULLMARQUEE-->	<marquee x1="35" x2="290" y1="12" y2="41" color="TextHigh" font="Osd">{MenuGroup}</marquee>
+<!--FULLMARQUEE-->	<marquee x1="35" x2="290" y1="12" y2="32" color="TextButton" font="Osd">{MenuItem}</marquee>
+<!--NOMARQUEE-ACTIVE-->	<text x1="35" x2="290" y1="12" y2="32" condition="{IsMenuCurrent}" color="TextHigh" align="left" font="Osd">{MenuCurrent}</text>
+<!--ACTIVEITEMMARQUEE-->	<marquee x1="35" x2="290" y1="12" y2="32" condition="{IsMenuCurrent}" color="TextHigh" align="left" font="Osd">{MenuCurrent}</marquee>
+	</list>
+	
+<!-- TIMER-INFO MAIN-MENU BEGIN-->
+	<block condition="equal({MenuTitle:clean},'VDR')">
+		<text x1="45" x2="209" y1="34" y2="62" align="left" color="TextButton"  font="Osd">{MenuTitle} - {VdrVersion}</text>
+		<text x1="216" x2="480" y1="34" y2="62" align="center" color="TextButton"  font="Osd">{DiskUsage}</text>
+		<text x1="480" x2="674" y1="34" y2="62"  color="TextButton" align="right" font="Osd">{DateTime:%a %d.%m.}   {DateTime:%H\:%M}</text>
+		<block condition="and({CurrentEventsTitle1},not({CurrentEventsTitle2}))">
+			<text x1="520" x2="685" y1="-184" y2="-164" color="TextButton" font="VDRSymbols Sans:Book@20">Timer:</text>
+			
+			<text x1="520" x2="685" y1="-159" y2="-143" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsTitle1}</text>
+			<blink x1="520" x2="685" y1="-159" y2="-143" delay="1000" condition="{CurrentEventsIsRecording1}" color="RedLow" font="VDRSymbols Sans:Book@12">{CurrentEventsTitle1}</blink>
+			<text x1="520" x2="685" y1="-141" y2="-125" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsStartDateTime1:%a %d.%m  %H\:%M}</text>		
+			<text x1="520" x2="685" y1="-121" y2="-107" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsChannelName1}</text>
+		</block>
+		<block condition="and({CurrentEventsTitle1},{CurrentEventsTitle2},not({CurrentEventsTitle3}))">
+			<text x1="520" x2="685" y1="-224" y2="-204" color="TextButton" font="VDRSymbols Sans:Book@20">Timer:</text>
+			<text x1="520" x2="685" y1="-199" y2="-183" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsTitle1}</text>
+			<blink x1="520" x2="685" y1="-199" y2="-183" delay="1000" condition="{CurrentEventsIsRecording1}" color="RedLow" font="VDRSymbols Sans:Book@12">{CurrentEventsTitle1}</blink>
+			<text x1="520" x2="685" y1="-181" y2="-165" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsStartDateTime1:%a\ %d.%m\ \ %H\:%M}</text>
+			<text x1="520" x2="685" y1="-163" y2="-147" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsChannelName1}</text>
+			
+			<text x1="520" x2="685" y1="-141" y2="-125" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsTitle2}</text>
+			<blink x1="520" x2="685" y1="-141" y2="-125" delay="1000" condition="{CurrentEventsIsRecording2}" color="RedLow" font="VDRSymbols Sans:Book@12">{CurrentEventsTitle2}</blink>
+			<text x1="520" x2="685" y1="-123" y2="-107" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsStartDateTime2:%a %d.%m  %H\:%M}</text>		
+			<text x1="520" x2="685" y1="-105" y2="-89" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsChannelName2}</text>
+		</block>	
+		<block condition="and({CurrentEventsTitle1},{CurrentEventsTitle2},{CurrentEventsTitle3})">
+			<text x1="520" x2="685" y1="-282" y2="-262" color="TextButton" font="VDRSymbols Sans:Book@20">Timer:</text>
+			<text x1="520" x2="685" y1="-257" y2="-241" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsTitle1}</text>
+			<blink x1="520" x2="685" y1="-257" y2="-241" delay="1000" condition="{CurrentEventsIsRecording1}" color="RedLow" font="VDRSymbols Sans:Book@12">{CurrentEventsTitle1}</blink>
+			<text x1="520" x2="685" y1="-239" y2="-223" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsStartDateTime1:%a\ %d.%m\ \ %H\:%M}</text>
+			<text x1="520" x2="685" y1="-221" y2="-205" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsChannelName1}</text>
+			
+			<text x1="520" x2="685" y1="-199" y2="-183" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsTitle2}</text>
+			<blink x1="520" x2="685" y1="-199" y2="-183" delay="1000" condition="{CurrentEventsIsRecording1}" color="RedLow" font="VDRSymbols Sans:Book@12">{CurrentEventsTitle2}</blink>
+			<text x1="520" x2="685" y1="-181" y2="-165" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsStartDateTime2:%a\ %d.%m\ \ %H\:%M}</text>
+			<text x1="520" x2="685" y1="-163" y2="-147" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsChannelName2}</text>
+			
+			<text x1="520" x2="685" y1="-141" y2="-125" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsTitle3}</text>
+			<blink x1="520" x2="685" y1="-141" y2="-125" delay="1000" condition="{CurrentEventsIsRecording2}" color="RedLow" font="VDRSymbols Sans:Book@12">{CurrentEventsTitle3}</blink>
+			<text x1="520" x2="685" y1="-123" y2="-107" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsStartDateTime3:%a %d.%m  %H\:%M}</text>		
+			<text x1="520" x2="685" y1="-105" y2="-89" color="TextButton" font="VDRSymbols Sans:Book@12">{CurrentEventsChannelName3}</text>
+	
+		</block>	
+	</block>
+<!-- TIMER-INFO MAIN-MENU END-->
+		
+<!--SUBMENU-BEGIN-->
+	<block condition="not(equal({MenuTitle:clean},'VDR'))">
+		<text x1="480" x2="674" y1="34" y2="62"  color="TextButton" align="right" font="Osd">{DateTime:%a %d.%m.}   {DateTime:%H\:%M}</text>
+		<text x1="45" x2="450" y1="34" y2="62" condition="not(equal({MenuTitle:rest},trans('Recordings')))" align="left"  color="TextButton" font="Osd">{MenuTitle}</text>
+		<block  condition="equal({MenuTitle:rest},trans('Recordings'))">
+			<text x1="45" x2="215" y1="34" y2="62" align="left"  color="TextButton" font="Osd">{MenuTitle}</text>
+			<text x1="216" x2="480" y1="34" y2="62"   align="center"  color="TextButton" font="Osd">{DiskUsage}</text>
+		</block>
+		
+	</block>
+	
+	<list x1="25" x2="635" y1="65" y2="-81"  condition="not(equal({MenuTitle:clean},'VDR'))">
+		<item height="23"/>
+		<image x="25"  y="11"  colors="64" condition="{IsMenuCurrent}" path="images/menuCurrentLong.png"/>
+		<ellipse x1="24" x2="34" y1="6" y2="21"  condition="{IsMenuCurrent}" arc="-2" color="Background"/>
+		<ellipse x1="24" x2="34" y1="25" y2="40"  condition="{IsMenuCurrent}" arc="-3" color="Background"/>
+		<ellipse x1="635" x2="645" y1="6" y2="21"  condition="{IsMenuCurrent}" arc="-1" color="Background"/>
+		<ellipse x1="635" x2="645" y1="25" y2="40"  condition="{IsMenuCurrent}" arc="-4" color="Background"/>
+<!--NOMARQUEE-->	<text x1="35" x2="635" y1="12" y2="32" color="TextButton" font="Osd">{MenuItem}</text>
+<!--NOMARQUEE-->	<text x1="35" x2="635" y1="12" y2="41" color="TextHigh" font="Osd">{MenuGroup}</text>
+<!--FULLMARQUEE-->	<marquee x1="35" x2="635" y1="12" y2="32" color="TextButton" font="Osd">{MenuItem}</marquee>
+<!--FULLMARQUEE-->	<marquee x1="35" x2="635" y1="12" y2="41" color="TextHigh" font="Osd">{MenuGroup}</marquee>
+<!--NOMARQUEE-ACTIVE-->	<text x1="35" x2="635" y1="12" y2="32" condition="{IsMenuCurrent}" color="TextHigh"  font="Osd">{MenuCurrent}</text>
+<!--ACTIVEITEMMARQUEE-->	<marquee x1="35" x2="635" y1="12" y2="32" condition="{IsMenuCurrent}" color="TextHigh"  font="Osd">{MenuCurrent}</marquee>
+	</list>
+<!--SUBMENU-END-->
+	
+		<image x="25" y="-65" colors="128" path="images/buttonsBG.png"/>
+		<image x="45" y="-65" condition="{ButtonRed}" colors="64" path="images/button.png"/>
+		<rectangle x1="47"  x2="201" y1="-56" y2="-55" condition="{ButtonRed}" color="RedHigh"/>		
+		<image x="202" y="-65" condition="{ButtonGreen}" colors="64" path="images/button.png"/>
+		<rectangle x1="204" x2="358" y1="-56" y2="-55" condition="{ButtonGreen}" color="GreenHigh"/>				
+		<image x="359" y="-65" condition="{ButtonYellow}" colors="64" path="images/button.png"/>
+		<rectangle x1="361" x2="515" y1="-56" y2="-55" condition="{ButtonYellow}" color="YellowHigh"/>				
+		<image x="516" y="-65" condition="{ButtonBlue}" colors="64" path="images/button.png"/>
+		<rectangle x1="518" x2="672" y1="-56" y2="-55" condition="{ButtonBlue}" color="BlueHigh"/>
+	
+		<text x1="47"  x2="201" y1="-53"  y2="-35" color="TextButton" align="center" font="Osd">{ButtonRed}</text>
+		<text x1="204" x2="358" y1="-53"  y2="-35" color="TextButton" align="center" font="Osd">{ButtonGreen}</text>
+		<text x1="361" x2="515" y1="-53"  y2="-35" color="TextButton" align="center" font="Osd">{ButtonYellow}</text>
+		<text x1="518" x2="672" y1="-53"  y2="-35" color="TextButton" align="center" font="Osd">{ButtonBlue}</text>
+
+	<block condition="{MenuText}" >
+		<scrolltext  x1="50" x2="658" y1="80" y2="-82" font="Osd" color="TextDescr" >{MenuText}</scrolltext>
+		<scrollbar  x1="668" x2="670" y1="80" y2="-82" condition="or({CanScrollUp},{CanScrollDown})" color="TextHigh" bgColor="TextButton" />
+	</block> 
+
+	<block condition="or({PresentDescription},{PresentTitle},{RecordingName})">
+		<block  condition="{RecordingName}">
+			<text x1="50" x2="670" y1="74" y2="98" color="TextDescr" font="VDRSymbols Sans:Book@20">{RecordingTitle}</text>
+			<text x1="50" x2="670" y1="103" y2="125" color="TextDescr" align="left" font="Osd">{RecordingDateTime:%a %d.%m.%Y}   {RecordingDateTime:%H\:%M} Uhr</text>
+						
+			<block  condition="{RecordingShortText}">
+				<text x1="50" x2="670" y1="130" y2="155" color="TextDescr" font="Sml" >Kanal: {ChannelName}  |  {RecordingLength} min  |  Dateigroesse: {RecordingSize} MB | Geschnitten: {RecordingCuttedLength} min</text>
+				<text x1="50" x2="670" y1="160" y2="180" color="TextDescr"  font="Osd">{RecordingShortText}</text>
+				<scrolltext x1="50" x2="658" y1="185" y2="-86" color="TextDescr" font="Osd">{RecordingDescription} </scrolltext>
+				<scrollbar x1="668" x2="670" y1="185" y2="-86" color="TextDescr" bgColor="BackgroundDark" condition="or({CanScrollUp},{CanScrollDown})"/>
+			</block>
+			<block  condition="not({RecordingShortText})">
+				<text x1="50" x2="670" y1="130" y2="155" color="TextDescr" font="Sml" >Kanal: {ChannelName}  |  {RecordingLength} min  |  Dateigroesse: {RecordingSize} MB | Geschnitten: {RecordingCuttedLength} min</text>
+				<scrolltext x1="50" x2="658" y1="160" y2="-86" color="TextDescr" font="Osd">{RecordingDescription}</scrolltext>
+				<scrollbar x1="668" x2="670" y1="160" y2="-86" color="TextDescr" bgColor="BackgroundDark" condition="or({CanScrollUp},{CanScrollDown})"/>
+			</block>
+		</block>
+		<block  condition="not({RecordingName})">
+<!--EPGIMAGES-->	<block  condition="not(file('EPGIMAGESPATH/{PresentEventID}.png'))">
+				<text x1="50" x2="670" y1="74" y2="98" color="TextDescr" font="VDRSymbols Sans:Book@20" >{PresentTitle}</text>
+				<text x1="50" x2="670" y1="103" y2="125" color="TextDescr" font="Sml" align="left" condition="not({PresentVPSDateTime})">{PresentStartDateTime:%a %d.%m.%y  %H\:%M} - {PresentEndDateTime:%H\:%M} ({PresentDuration:%m} min)</text>
+				<text x1="50" x2="670" y1="103" y2="125" color="TextDescr" font="Sml" align="left"  condition="{PresentVPSDateTime}">{PresentStartDateTime:%a %d.%m.%y  %H\:%M} - {PresentEndDateTime:%H\:%M} ({PresentDuration:%m} min) VPS: {PresentVPSDateTime:%H\:%M}</text>
+				<text x1="50" x2="670" y1="130" y2="155" color="TextDescr" font="Osd">{PresentShortText}</text>			
+<!--EPGIMAGES-->	</block>
+<!--EPGIMAGES-->	<block  condition="file('EPGIMAGESPATH/{PresentEventID}.png')">
+<!--EPGIMAGES-->		<text x1="50" x2="540" y1="74" y2="98" color="TextDescr" font="VDRSymbols Sans:Book@20" >{PresentTitle}</text>
+<!--EPGIMAGES-->		<text x1="50" x2="540" y1="103" y2="125" color="TextDescr" font="Sml" align="left" condition="not({PresentVPSDateTime})">{PresentStartDateTime:%a %d.%m.%y  %H\:%M} - {PresentEndDateTime:%H\:%M} ({PresentDuration:%m} min)</text>
+<!--EPGIMAGES-->		<text x1="50" x2="540" y1="103" y2="125" color="TextDescr" font="Sml" align="left"  condition="{PresentVPSDateTime}">{PresentStartDateTime:%a %d.%m.%y  %H\:%M} - {PresentEndDateTime:%H\:%M} ({PresentDuration:%m} min) VPS: {PresentVPSDateTime:%H\:%M}</text>
+<!--EPGIMAGES-->		<text x1="50" x2="540" y1="130" y2="155" color="TextDescr" font="Osd">{PresentShortText}</text>
+<!--EPGIMAGES-->		<image x1="549" x2="670" y1="67" y2="227" colors="64" path="EPGIMAGESPATH/{PresentEventID}.png"/>
+<!--EPGIMAGES-->	</block>
+			<scrolltext x1="50" x2="658" y1="160" y2="-86" color="TextDescr" font="Osd">{PresentDescription}</scrolltext>
+			<scrollbar x1="668" x2="670" y1="160" y2="-86" color="TextDescr" bgColor="BackgroundDark" condition="or({CanScrollUp},{CanScrollDown})"/>			
+		</block>
+	</block>
+	<block condition="or({MessageInfo},{MessageStatus},{MessageWarning},{MessageError})">
+		<image x="25"  y="-90" colors="64" path="images/messageBG.png"/>	
+		<text x1="25" x2="695" y1="-87" y2="-67" align="center" color="TextHigh"  font="Osd">{MessageInfo}</text>
+		<text x1="25" x2="695" y1="-87" y2="-67" align="center" color="GreenHigh" font="Osd">{MessageStatus}</text>
+		<text x1="25" x2="695" y1="-87" y2="-67" align="center" color="YellowHigh" font="Osd">{MessageWarning}</text>
+		<text x1="25" x2="695" y1="-87" y2="-67" align="center" color="RedHigh"  font="Osd">{MessageError}</text> 
+	</block>
+</display>

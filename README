@@ -1,0 +1,119 @@
+#    README for anthra-SD skin for text2skin
+#
+#    Copyright (C) 2010-2013 Tomas Saxer <tsaxer@gmx.de> 
+#
+#    This program is free software; you can redistribute it and/or modify it under the terms of 
+#    the GNU General Public License as published by the Free Software Foundation; either 
+#    version 2 of the License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+#    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+#    See the GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License along with this program; 
+#    if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, 
+#    MA 02110, USA
+
+
+Latest version available at: http://villa-villekulla.de/anthra/vdr/
+
+Description:
+
+	anthra_SD-skin is a dark, anthracite skin for Klaus Schmidingers VDR (http://www.tvdr.de/).
+
+	The resolution of the skin is 720x576 and it is vertically scalable.
+	Aspect ratio is 4:3, if 16:9 is needed anthra_1024 should be used.
+
+	Users with FullHD- or HD-Ready-capable hardware should have a look at anthra-Full-HD and anthra-HD-Ready-skins
+
+	e.g. http://vdrportal.de/board/thread.php?threadid=99886
+
+	anthra_SD-skin is designed to work with softdecoders like vdr-xine and xineliboutput - both preferred with vdpau - 
+	but it is also succesfully tested with eHD-cards.
+
+	The skin will not work with Fullfeaturd-DVB-Cards with only original (2MB) memory
+	and DXR3-Cards.
+
+	Fullfeaturd-DVB-Cards with extended memory (modded) should be tested.
+
+
+1. Requirements:
+
+	a. text2skin, latest GIT-Version: http://projects.vdr-developer.org/git/vdr-plugin-text2skin.git/commit/?id=7bd88a078d31f57e8fcfc0b93c45c3e8b13c5190
+	
+		resp: git clone git://projects.vdr-developer.org/vdr-plugin-text2skin.git
+	
+		initially developed by Sascha Volkenandt - now it is a community maintained project
+	
+		http://projects.vdr-developer.org/projects/plg-text2skin
+	
+	b. VDRSymbols.ttf
+	
+		by Andreas Mair
+		
+		http://andreas.vdr-developer.org/fonts/download/vdrsymbols-ttf-20100612.tgz
+	
+	
+2. The *.po files for the translations of *Volume* and *Mute* are taken from
+	VDR-sources. Thanks a lot to all translators and especially to
+	Klaus Schmidinger for developing VDR !
+	
+3. Make.config settings:
+
+	a. NOLOGOS
+	   LOGOSLEFT
+	   Select only one of them!
+	   
+	   CHANNELLOGOSPATH 
+	
+		For German broadcasting corporations channellogos
+		designed by Oliver Ranke (liqidolze@vdrportal.de) are available. 
+	
+		!!!Please note!!!
+		So-called liquid-logos4anthra are exclusively destined for 
+		personal use in association with VDR.
+		!!!Copyright holder of the original logos are the broadcasting corporations!!!
+
+		Download:
+	
+		http://villa-villekulla.de/anthra/vdr/liquid-logos4anthra_HD-1.0.tar.gz
+		
+		Just unpack the liquid-logos4anthra_HD.tar.gz
+		change in anthra_SD's Make.config the CHANNELLOGOS-option  to "LOGOSLEFT = 1"
+		and set CHANNELLOGOSPATH
+	
+		
+	b. EPGIMAGES
+	   EPGIMAGESPATH
+	   EPGIMAGESFORMAT
+	   
+		EPGIMAGES downloaded e.g. with tvm2vdr-plugin
+		set "EPGIMAGES = 1" 
+		set e.g. "EPGIMAGESPATH = \/etc\/vdr\/plugins\/tvm2vdr\/epgimages"
+		and choose "EPGIMAGESFORMAT = 1" if you have *.jpg
+		default is *.png
+	
+		
+	c. DIGIT_SIGNAL: Signal Strength and Signal-to-Noise Ratio in digits %
+	   GRAPH_SIGNAL: Displays bars for Signal Strength and Signal-to-Noise Ratio
+	   Select only one of them!     
+		
+	d. NOMARQUEE: No marquee 
+	   ACTIVE_ITEM_MARQUEE: In menus only active items are scrolling
+	   FULLMARQUEE: In menus all items are scrolling
+	   
+	   Select only one of them!
+	   If ACTIVE_ITEM_MARQUEE is chosen one have to set
+	   "Reset marquee for new item" in setup of text2skin to "No"!
+	   
+Take your choice and rebuild the skinfile with 
+
+		make clean all
+	
+
+If you encounter any bugs, problems, or have any issues,
+please don't hesitate to contact me or place a post at vdrportal.de
+even in English.
+
+
+Have fun!
